@@ -10,8 +10,11 @@ const posts = require("./routes/api/posts");
 const app = express();
 
 // Body parser middleware
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
+// Body parser is included in express now
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 // DB config
 const db = require("./config/keys").mongoURI;
